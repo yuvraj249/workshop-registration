@@ -2,6 +2,7 @@ package config
 
 import (
 	"database/sql"
+	"fmt"
 	"os"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -24,7 +25,11 @@ func InitDB() {
 
 	err = db.Ping()
 	if err != nil {
+		
 		panic(err)
 	}
+
+	DB = db
+	fmt.Println("database connected successfully")
 
 }
