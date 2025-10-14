@@ -20,8 +20,8 @@ create table if not exists registrations(
    workshop_id int not null,
    status varchar(30) not null default 'registered',
    unique key atttendee_worskshop_id (attendee_id,workshop_id),
-   foreign key (attendee_id) references attendees (id) on delete cascade ,
-   foreign key (workshop_id) references workshops (id) on delete cascade ,
+   foreign key (attendee_id) references attendees (id) on delete cascade on update cascade,
+   foreign key (workshop_id) references workshops (id) on delete cascade on update cascade ,
    index idx_workshop (workshop_id),
    index idx_attendee (attendee_id)
 
