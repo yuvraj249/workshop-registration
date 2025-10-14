@@ -6,7 +6,7 @@ import (
 )
 
 func InsertAttendee(name, email string) int64 {
-	query := "INSERT INTO attendees(name,string) values(?,?)"
+	query := "INSERT INTO attendees(name,email) values(?,?)"
 	result, err := config.DB.Exec(query, name, email)
 	if err != nil {
 		panic(err)
